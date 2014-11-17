@@ -37,13 +37,17 @@ function GameWorldBuildingLayer:__onDeclareVars( ... )
 end
 
 -- 设置数据;
--- {背景图片名称, 背景位置, 特效名称, 特效位置}
--- {bgImg, bgPosition, effectName, effectPosition}
+-- {背景图片名称, 背景位置, 标题图片, 标题位置, 特效名称, 特效位置}
+-- {bgImg, titleImg, titlePosition, effectName, effectPosition}
 function GameWorldBuildingLayer:setData(data)
     -- body
     local bgImg = ImageView:create()
     bgImg:loadTexture(data.bgImg, UI_TEX_TYPE_PLIST)
     self:addChild(bgImg)
+    -- title
+    local titleImg = ImageView:create()
+    titleImg:loadTexture(data.titleImg, UI_TEX_TYPE_PLIST)
+    self:addChild(titleImg)
 end
 
 -- init;

@@ -91,7 +91,7 @@ function GameWorldSceneLayer:__onInit( ... )
     buildingLayer:setSize(CCSize(display.width, display.height))
     self:addChild(buildingLayer)
     local arenaBuilding = requireNewLayer("GameWorldBuildingLayer")
-    arenaBuilding:setData({bgImg = "town/魔法塔.png"})
+    arenaBuilding:setData({bgImg = "town/魔法塔.png", titleImg = "town/魔法塔_name.png"})
     arenaBuilding:setPosition(CCPoint(200, 440))
     buildingLayer:addChild(arenaBuilding)
 end
