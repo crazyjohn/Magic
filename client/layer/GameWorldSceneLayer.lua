@@ -48,9 +48,15 @@ function GameWorldSceneLayer:__enter()
     local frames = display.newFrames("effect_fuben_feiji_%d.png", 10001, 20)
     local animation = display.newAnimation(frames, 2 / 20) -- 2 秒播放 20 桢
     local animate = CCAnimate:create(animation)
-    local action = CCRepeatForever:create(animate)
+    -- local action = CCRepeatForever:create(animate)
     local animateSprite = CCSprite:create()
-    animateSprite:runAction(action)
+    animateSprite:runAction(transition.sequence({
+            animate,
+            CCCallFunc:create(function( ... )
+                -- body
+                self:removeNode(animateSprite)
+            end)
+        }))
     animateSprite:setScale(2)
     animateSprite:setPosition(ccp(display.cx, display.cy))
     self:addNode(animateSprite)
