@@ -87,11 +87,13 @@ function GameWorldSceneLayer:__onInit( ... )
     -- set bg
     uiLayer:setSceneBg(self.__bgImg)
     -- building layer
+    local buildingLayer = Layout:create()
+    buildingLayer:setSize(CCSize(display.width, display.height))
+    self:addChild(buildingLayer)
     local arenaBuilding = requireNewLayer("GameWorldBuildingLayer")
     arenaBuilding:setData({bgImg = "town/魔法塔.png"})
-    arenaBuilding:setScale(4)
-    arenaBuilding:setPosition(CCPoint(100, 100))
-    self:addChild(arenaBuilding)
+    arenaBuilding:setPosition(CCPoint(200, 440))
+    buildingLayer:addChild(arenaBuilding)
 end
 
 return GameWorldSceneLayer
