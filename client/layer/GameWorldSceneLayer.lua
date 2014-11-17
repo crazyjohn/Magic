@@ -81,19 +81,58 @@ end
 -- init;
 function GameWorldSceneLayer:__onInit( ... )
     -- TODO: do init things
+    
+    -- 建筑层
+    local buildingLayer = Layout:create()
+    buildingLayer:setSize(CCSize(display.width, display.height))
+    self:addChild(buildingLayer)
+    -- 1. 技能塔
+    local towerBuilding = requireNewLayer("GameWorldBuildingLayer")
+    towerBuilding:setData({bgImg = "town/魔法塔.png", titleImg = "town/魔法塔_name.png"})
+    towerBuilding:setPosition(CCPoint(200, 440))
+    buildingLayer:addChild(towerBuilding)
+    -- 2. 技能塔
+    local arenaBuilding = requireNewLayer("GameWorldBuildingLayer")
+    arenaBuilding:setData({bgImg = "town/竞技场.png", titleImg = "town/竞技场_name.png"})
+    arenaBuilding:setPosition(CCPoint(400, 280))
+    buildingLayer:addChild(arenaBuilding)
+    -- 3. 主城
+    local castleBuilding = requireNewLayer("GameWorldBuildingLayer")
+    castleBuilding:setData({bgImg = "town/主城.png", titleImg = "town/jianzhu_002.png"})
+    castleBuilding:setPosition(CCPoint(635, 515))
+    buildingLayer:addChild(castleBuilding)
+    -- 4. 矿场
+    local mineBuilding = requireNewLayer("GameWorldBuildingLayer")
+    mineBuilding:setData({bgImg = "town/精炼厂.png", titleImg = "town/矿场_name.png"})
+    mineBuilding:setPosition(CCPoint(400, 430))
+    buildingLayer:addChild(mineBuilding)
+    -- 5. 战争学院
+    local collegeBuilding = requireNewLayer("GameWorldBuildingLayer")
+    collegeBuilding:setData({bgImg = "town/战争学院.png", titleImg = "town/战争学院_name.png"})
+    collegeBuilding:setPosition(CCPoint(865, 300))
+    buildingLayer:addChild(collegeBuilding)
+    -- 6. 训练场
+    local slaveBuilding = requireNewLayer("GameWorldBuildingLayer")
+    slaveBuilding:setData({bgImg = "town/训练场.png", titleImg = "town/战俘营_name.png"})
+    slaveBuilding:setPosition(CCPoint(680, 320))
+    buildingLayer:addChild(slaveBuilding)
+    -- 7. 铁匠铺
+    local smithBuilding = requireNewLayer("GameWorldBuildingLayer")
+    smithBuilding:setData({bgImg = "town/铁匠铺.png", titleImg = "town/铁匠铺_name.png"})
+    smithBuilding:setPosition(CCPoint(630, 210))
+    buildingLayer:addChild(smithBuilding)
+    -- 8. 占星屋
+    local starBuilding = requireNewLayer("GameWorldBuildingLayer")
+    starBuilding:setData({bgImg = "town/天命神殿.png", titleImg = "town/占星_name.png"})
+    starBuilding:setPosition(CCPoint(865, 530))
+    buildingLayer:addChild(starBuilding)
+
+
     -- 游戏世界UI层
     local uiLayer = requireNewLayer("GameWorldUILayer")
     self:addChild(uiLayer)
     -- set bg
     uiLayer:setSceneBg(self.__bgImg)
-    -- building layer
-    local buildingLayer = Layout:create()
-    buildingLayer:setSize(CCSize(display.width, display.height))
-    self:addChild(buildingLayer)
-    local arenaBuilding = requireNewLayer("GameWorldBuildingLayer")
-    arenaBuilding:setData({bgImg = "town/魔法塔.png", titleImg = "town/魔法塔_name.png"})
-    arenaBuilding:setPosition(CCPoint(200, 440))
-    buildingLayer:addChild(arenaBuilding)
 end
 
 return GameWorldSceneLayer
