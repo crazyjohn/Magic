@@ -21,7 +21,7 @@ function ModelManager:__initModels()
 	self:registerModel("CreateRoleModel")
 end
 
--- 注册模块数据;
+-- 注册业务模型;
 function ModelManager:registerModel(modelName)
 	-- body
 	local dataModule = requireNewModel(modelName)

@@ -6,7 +6,7 @@
 ModuleManagerInstance = requireAndNew(CLIENT_MANAGERS_PATH .. "ModuleManager")
 -- 视图层管理器
 LayerManagerInstance = requireAndNew(CLIENT_MANAGERS_PATH .. "LayerManager")
--- 数据管理器
+-- 业务模型管理器
 ModelManager = requireAndNew(CLIENT_MANAGERS_PATH .. "ModelManager")
 -- ---------- MVC end ----------
 
