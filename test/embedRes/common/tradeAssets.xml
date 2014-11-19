@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:047fd7df611e11c7800f4e60a49c2cdd:89c6c342909fd2a21f7f656fe2d9ecaa:161e5872c0cfc18e6d95961ab0044f42$ -->
+<TextureAtlas imagePath="tradeAssets.png">
+    <SubTexture name="add" x="472" y="92" width="30" height="34" frameX="-2" frameY="0" frameWidth="32" frameHeight="34"/>
+    <SubTexture name="background_skill" x="2" y="346" width="78" height="77" frameX="0" frameY="0" frameWidth="80" frameHeight="81"/>
+    <SubTexture name="btn_003" x="82" y="346" width="121" height="49"/>
+    <SubTexture name="btn_004" x="2" y="425" width="121" height="49"/>
+    <SubTexture name="close01" x="440" y="35" width="51" height="55"/>
+    <SubTexture name="frame_goumai" x="205" y="346" width="101" height="39" frameX="-2" frameY="0" frameWidth="103" frameHeight="39"/>
+    <SubTexture name="frame_mojing" x="125" y="397" width="161" height="46"/>
+    <SubTexture name="frame_number" x="440" y="2" width="60" height="31"/>
+    <SubTexture name="panel_goumai" x="2" y="2" width="436" height="342" frameX="-7" frameY="-2" frameWidth="450" frameHeight="350"/>
+    <SubTexture name="subtraction" x="440" y="92" width="30" height="34" frameX="-2" frameY="0" frameWidth="32" frameHeight="34"/>
+</TextureAtlas>
