@@ -1,8 +1,144 @@
--- GC消息注册器,以后可以用工具生成;
--- Author: crazyjohn
--- Date: 2014-11-03 22:14:58
---
-
+-- MessageType;
+-- @author crazyjohn;
 -- register GCMessage
--- GC登陆消息;
+
+-- GCplayerMessage
 requireNewMessage("GCPlayerMessage"):register()
+-- -- GChumanMessage
+-- requireNewMessage("GCHumanMessage"):register()
+-- -- GCchatMessage
+-- requireNewMessage("GCChatMessage"):register()
+-- -- GCbuildingMessage
+-- requireNewMessage("GCBuildingMessage"):register()
+-- -- GCbagMessage
+-- requireNewMessage("GCBagMessage"):register()
+-- -- GCmallMessage
+-- requireNewMessage("GCMallMessage"):register()
+-- -- GCbulletinMessage
+-- requireNewMessage("GCBulletinMessage"):register()
+-- -- GCcdMessage
+-- requireNewMessage("GCCdMessage"):register()
+-- -- GCquestMessage
+-- requireNewMessage("GCQuestMessage"):register()
+-- -- GCshopMessage
+-- requireNewMessage("GCShopMessage"):register()
+-- -- GClevyMessage
+-- requireNewMessage("GCLevyMessage"):register()
+-- -- GCfriendMessage
+-- requireNewMessage("GCFriendMessage"):register()
+-- -- GCrankMessage
+-- requireNewMessage("GCRankMessage"):register()
+-- -- GCmailMessage
+-- requireNewMessage("GCMailMessage"):register()
+-- -- GCitemMessage
+-- requireNewMessage("GCItemMessage"):register()
+-- -- GChoroscopeMessage
+-- requireNewMessage("GCHoroscopeMessage"):register()
+-- -- GCgemMessage
+-- requireNewMessage("GCGemMessage"):register()
+-- -- GCtechnologyMessage
+-- requireNewMessage("GCTechnologyMessage"):register()
+-- -- GCbattleMessage
+-- requireNewMessage("GCBattleMessage"):register()
+-- -- GCtrainingMessage
+-- requireNewMessage("GCTrainingMessage"):register()
+-- -- GCcrystalexchangeMessage
+-- requireNewMessage("GCCrystalexchangeMessage"):register()
+-- -- GCloginrewardMessage
+-- requireNewMessage("GCLoginrewardMessage"):register()
+-- -- GConlinerewardMessage
+-- requireNewMessage("GCOnlinerewardMessage"):register()
+-- -- GCturntableMessage
+-- requireNewMessage("GCTurntableMessage"):register()
+-- -- GCguideMessage
+-- requireNewMessage("GCGuideMessage"):register()
+-- -- GCskillMessage
+-- requireNewMessage("GCSkillMessage"):register()
+-- -- GCstageMessage
+-- requireNewMessage("GCStageMessage"):register()
+-- -- GCvipMessage
+-- requireNewMessage("GCVipMessage"):register()
+-- -- GCantiindulgeMessage
+-- requireNewMessage("GCAntiindulgeMessage"):register()
+-- -- GCquestionMessage
+-- requireNewMessage("GCQuestionMessage"):register()
+-- -- GCcostnotifyMessage
+-- requireNewMessage("GCCostnotifyMessage"):register()
+-- -- GCarenaMessage
+-- requireNewMessage("GCArenaMessage"):register()
+-- -- GCexpeditebuyMessage
+-- requireNewMessage("GCExpeditebuyMessage"):register()
+-- -- GCmeditationMessage
+-- requireNewMessage("GCMeditationMessage"):register()
+-- -- GCbossMessage
+-- requireNewMessage("GCBossMessage"):register()
+-- -- GCelitestageMessage
+-- requireNewMessage("GCElitestageMessage"):register()
+-- -- GCactivityMessage
+-- requireNewMessage("GCActivityMessage"):register()
+-- -- GCgmquestionMessage
+-- requireNewMessage("GCGmquestionMessage"):register()
+-- -- GCrewardMessage
+-- requireNewMessage("GCRewardMessage"):register()
+-- -- GCmineMessage
+-- requireNewMessage("GCMineMessage"):register()
+-- -- GChelperMessage
+-- requireNewMessage("GCHelperMessage"):register()
+-- -- GCautobattleMessage
+-- requireNewMessage("GCAutobattleMessage"):register()
+-- -- GChonourshopMessage
+-- requireNewMessage("GCHonourshopMessage"):register()
+-- -- GCgiftMessage
+-- requireNewMessage("GCGiftMessage"):register()
+-- -- GCfosterMessage
+-- requireNewMessage("GCFosterMessage"):register()
+-- -- GCrefineMessage
+-- requireNewMessage("GCRefineMessage"):register()
+-- -- GCmatchbattleMessage
+-- requireNewMessage("GCMatchbattleMessage"):register()
+-- -- GCfunctionhelperMessage
+-- requireNewMessage("GCFunctionhelperMessage"):register()
+-- -- GCwarriorMessage
+-- requireNewMessage("GCWarriorMessage"):register()
+-- -- GCbattleguideMessage
+-- requireNewMessage("GCBattleguideMessage"):register()
+-- -- GCrechargetxMessage
+-- requireNewMessage("GCRechargetxMessage"):register()
+-- -- GCyellowvipMessage
+-- requireNewMessage("GCYellowvipMessage"):register()
+-- -- GCtitleMessage
+-- requireNewMessage("GCTitleMessage"):register()
+-- -- GClegionMessage
+-- requireNewMessage("GCLegionMessage"):register()
+-- -- GCgodsoulMessage
+-- requireNewMessage("GCGodsoulMessage"):register()
+-- -- GCprisonMessage
+-- requireNewMessage("GCPrisonMessage"):register()
+-- -- GCabattoirMessage
+-- requireNewMessage("GCAbattoirMessage"):register()
+-- -- GCspriteMessage
+-- requireNewMessage("GCSpriteMessage"):register()
+-- -- GCbloodtempleMessage
+-- requireNewMessage("GCBloodtempleMessage"):register()
+-- -- GCsignMessage
+-- requireNewMessage("GCSignMessage"):register()
+-- -- GCrechargeMessage
+-- requireNewMessage("GCRechargeMessage"):register()
+-- -- GCmagicMessage
+-- requireNewMessage("GCMagicMessage"):register()
+-- -- GCfactionMessage
+-- requireNewMessage("GCFactionMessage"):register()
+-- -- GCmarsMessage
+-- requireNewMessage("GCMarsMessage"):register()
+-- -- GCtargetMessage
+-- requireNewMessage("GCTargetMessage"):register()
+-- -- GClegionbossMessage
+-- requireNewMessage("GCLegionbossMessage"):register()
+-- -- GClegionmineMessage
+-- requireNewMessage("GCLegionmineMessage"):register()
+-- -- GCnostrumMessage
+-- requireNewMessage("GCNostrumMessage"):register()
+-- -- GCescortMessage
+-- requireNewMessage("GCEscortMessage"):register()
+-- -- GCpredictMessage
+-- requireNewMessage("GCPredictMessage"):register()
