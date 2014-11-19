@@ -4,8 +4,6 @@
 local logger = LoggerFactory:getLogger("PlayerHandler")
 local PlayerHandler = class("PlayerHandler")
 
-local CGPlayerMessage = requireAndNew("client.message.CGPlayerMessage")
-
 function PlayerHandler:GC_PLAYER_LOGIN_RESULT(resultCode)
 	-- body
 	-- business code

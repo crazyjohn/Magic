@@ -5,11 +5,13 @@
 
 ---------- 常量定义开始 ----------
 -- 消息包路径
-CLIENT_MESSAGE_PATH = "client.message."
+CLIENT_MESSAGE_PATH = "client.net.message."
 -- 消息註冊包路径
-CLIENT_MESSAGE_REGISTRY = "client.message.registry."
+CLIENT_MESSAGE_REGISTRY = "client.net.message.registry."
 -- 处理器包路径
-CLIENT_HANDLER_PATH = "client.handler."
+CLIENT_HANDLER_PATH = "client.net.handler."
+-- 协议数据包路径
+CLIENT_PROTO_DATA_PATH = "client.net.proto."
 -- 网络包路径
 CLIENT_NET_PATH = "client.net."
 -- 模型包路径(Model)
@@ -28,6 +30,4 @@ CLIENT_UTIL_PATH = "client.util."
 CLIENT_ENUM_PATH = "client.enum."
 -- 事件包路径
 CLIENT_EVENT_PATH = "client.event."
--- 协议数据包路径
-CLIENT_PROTO_DATA_PATH = "client.proto."
 ---------- 常量定义结束 ----------
