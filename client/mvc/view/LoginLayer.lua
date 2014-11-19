@@ -79,6 +79,19 @@ function LoginLayer:__onInit( ... )
 		end
 		
 	end)
+	-- serverListBtn test
+	local selectServerBtn = Button:create()
+	selectServerBtn:setTitleFontSize(24)
+	selectServerBtn:setPosition(ccp(500, 300))
+	self.__quickLoginBtn:getParent():addChild(selectServerBtn)
+	selectServerBtn:loadTextureNormal("enterBtn.png", UI_TEX_TYPE_PLIST)
+	selectServerBtn:addTouchEventListener(function(touch, event)
+		if event == TOUCH_EVENT_ENDED then
+			logger:debug("Select server")
+			local serverListLayer = requireNewLayer("ServerListLayer")
+			PopUpManager:addPopUp(serverListLayer, true, true)
+		end
+	end)
 end
 
 return LoginLayer

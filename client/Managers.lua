@@ -4,6 +4,8 @@
 -- ---------- MVC begin ----------
 -- 模块管理器
 ModuleManagerInstance = requireAndNew(CLIENT_MANAGERS_PATH .. "ModuleManager")
+-- PopUpManager
+PopUpManager = requireAndNew(CLIENT_MANAGERS_PATH .. "PopUpManager")
 -- 视图层管理器
 LayerManagerInstance = requireAndNew(CLIENT_MANAGERS_PATH .. "LayerManager")
 -- 业务模型管理器

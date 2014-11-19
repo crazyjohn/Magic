@@ -14,11 +14,16 @@ local rootUILayer = Layout:create()
 -- 初始化视图层管理器;
 -- @param root 基础层节点;
 function LayerManager:initLayerManager(root)
+	-- 1. UI层
 	root:addChild(touchGroupLayer)
-	touchGroupLayer:setTouchEnabled(true)
-	rootUILayer:setTouchEnabled(true)
 	-- 天杀的这里要使用这个接口才可以;
 	touchGroupLayer:addWidget(rootUILayer)
+	-- 2. popUpManager层
+	local popUpTouchLayer = TouchGroup:create()
+	local popUpLayer = Layout:create()
+	popUpTouchLayer:addWidget(popUpLayer)
+	root:addChild(popUpTouchLayer)
+	PopUpManager:setRoot(popUpLayer)
 end
 
 -- 添加视图到模块视图层;
