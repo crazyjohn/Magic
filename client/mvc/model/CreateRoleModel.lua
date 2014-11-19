@@ -1,21 +1,21 @@
--- 创建角色数据层;
+-- 创建角色领域模型;
 -- @author crazyjohn
 -- @date 2014-11-14 22:31:44
 --
 
 -- create logger
-local logger = LoggerFactory:getLogger("CreateRoleData")
+local logger = LoggerFactory:getLogger("CreateRoleModel")
 -- create class
-local CreateRoleData = class("CreateRoleData")
+local CreateRoleModel = class("CreateRoleModel")
 
 -- ctor
-function CreateRoleData:ctor()
+function CreateRoleModel:ctor()
     -- body of ctor
 end
 
 -- set data
-function CreateRoleData:setData(data)
-	logger:dump(data, "CreateRoleData")
+function CreateRoleModel:setData(data)
+	logger:dump(data, "CreateRoleModel")
 	self.__data = data
 end
 
@@ -24,7 +24,7 @@ end
 -- index = 2 --> occupationType = 2
 -- index = 3 --> occupationType = 4
 local indexTable = {1, 2, 4}
-function CreateRoleData:getDescByIndex(index)
+function CreateRoleModel:getDescByIndex(index)
 	for k,v in pairs(self.__data) do
 		if tostring(v["occupationType"]) == tostring(indexTable[index]) then
 			self.__currentOccupation = indexTable[index]
@@ -34,8 +34,8 @@ function CreateRoleData:getDescByIndex(index)
 	return nil
 end
 
-function CreateRoleData:getCurrentOccupation()
+function CreateRoleModel:getCurrentOccupation()
 	return self.__currentOccupation
 end
 
-return CreateRoleData
+return CreateRoleModel

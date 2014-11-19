@@ -59,9 +59,9 @@ function requireNewMessage(messageName, ...)
 	return requireAndNew(messagePath)
 end
 
-function requireNewModuleData(dataName, ...)
-	local dataPath = CLIENT_DATA_PATH .. dataName
-	return requireAndNew(dataPath)
+function requireNewModel(modelName, ...)
+	local modelPath = CLIENT_DATA_PATH .. modelName
+	return requireAndNew(modelPath)
 end
 
 function requireNewLayer(layerName, ...)

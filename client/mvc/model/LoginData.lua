@@ -1,3 +1,0 @@
--- 登录数据;
--- @author crazyjohn;
--- @date: 2014-11-04

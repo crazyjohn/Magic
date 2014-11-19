@@ -19,7 +19,7 @@ end
 function PlayerHandler:GC_CHARACTER_TEMPLATE(templates)
 	logger:debug("Templates size: " .. #templates)
 	-- 设置数据
-	DataManager:getModuleDataByName("CreateRoleData"):setData(templates)
+	ModelManager:getModelByName("CreateRoleModel"):setData(templates)
 	CGPlayerMessage:CG_GET_CHAR_LIST()
 end
 

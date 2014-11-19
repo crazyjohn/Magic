@@ -7,7 +7,7 @@ ModuleManagerInstance = requireAndNew(CLIENT_MANAGERS_PATH .. "ModuleManager")
 -- 视图层管理器
 LayerManagerInstance = requireAndNew(CLIENT_MANAGERS_PATH .. "LayerManager")
 -- 数据管理器
-DataManager = requireAndNew(CLIENT_MANAGERS_PATH .. "DataManager")
+ModelManager = requireAndNew(CLIENT_MANAGERS_PATH .. "ModelManager")
 -- ---------- MVC end ----------
 
 -- 全局消息注册表;

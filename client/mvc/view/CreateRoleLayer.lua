@@ -89,14 +89,14 @@ function CreateRoleLayer:__onInit( ... )
     -- 命名按钮
     self.__nameBtn:addTouchEventListener(function(touch, event)
         if event == TOUCH_EVENT_ENDED then
-            CGPlayerMessage:CG_AUTO_NAME(DataManager:getModuleDataByName("CreateRoleData"):getCurrentOccupation())
+            CGPlayerMessage:CG_AUTO_NAME(ModelManager:getModelByName("CreateRoleModel"):getCurrentOccupation())
         end
     end)
     -- 创建角色按钮
     self.__createBtn:addTouchEventListener(function(touch, event)
         -- TODO: crazyjohn 创建角色前的必要判断
         --device.showAlert("警告", "角色名不能为空!")
-        CGPlayerMessage:CG_CREATE_CHAR(self.__nameTF:getStringValue(), DataManager:getModuleDataByName("CreateRoleData"):getCurrentOccupation())
+        CGPlayerMessage:CG_CREATE_CHAR(self.__nameTF:getStringValue(), ModelManager:getModelByName("CreateRoleModel"):getCurrentOccupation())
     end)
     -- 命名事件
     EventBus:addEventListener(EventType.GC_AUTO_NAME, handler(self, self.__updateRoleName), self)
@@ -109,7 +109,7 @@ function CreateRoleLayer:__onInit( ... )
 
 end
 
--- 更新角色名;
+-- 更新角色名;ModelManager
 function CreateRoleLayer:__updateRoleName(event)
         self.__nameTF:setText(event.data.roleName)
 end
@@ -132,7 +132,7 @@ function CreateRoleLayer:__render( ... )
     -- name
     self.__occupationName:setText(occupationNameTable[self.__currentIndex])
     -- 描述
-    self.__descLbl:setText(DataManager:getModuleDataByName("CreateRoleData"):getDescByIndex(self.__currentIndex))
+    self.__descLbl:setText(ModelManager:getModelByName("CreateRoleModel"):getDescByIndex(self.__currentIndex))
 end
 
 function CreateRoleLayer:__addIndex()
