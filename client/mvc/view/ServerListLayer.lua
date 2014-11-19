@@ -45,7 +45,7 @@ function ServerListLayer:__onInit( ... )
     bgImg:setTouchEnabled(true)
     bgImg:addTouchEventListener(function(touch, event)
         if event == TOUCH_EVENT_ENDED then
-            logger:debug("Touch me")
+            logger:debug("Close server list")
             PopUpManager:removePopUp(self)
         end
     end)
