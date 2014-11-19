@@ -28,4 +28,6 @@ CLIENT_UTIL_PATH = "client.util."
 CLIENT_ENUM_PATH = "client.enum."
 -- 事件包路径
 CLIENT_EVENT_PATH = "client.event."
+-- 协议数据包路径
+CLIENT_PROTO_DATA_PATH = "client.proto."
 ---------- 常量定义结束 ----------

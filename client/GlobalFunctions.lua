@@ -82,6 +82,11 @@ function requireNewByteArray()
 	return requireAndNew("framework.cc.utils.ByteArray")
 end
 
+function requireNewProtoData(protoName)
+	local protoPath = CLIENT_PROTO_DATA_PATH .. protoName
+	return requireAndNew(protoPath)
+end
+
 -- 引入枚举类型;
 function requireEnum(enumName)
 	return require(CLIENT_ENUM_PATH .. enumName)
