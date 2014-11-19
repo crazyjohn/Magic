@@ -1,12 +1,12 @@
--- LoginHandler;
+-- PlayerHandler;
 -- @author crazyjohn;
 -- 日志
-local logger = LoggerFactory:getLogger("LoginHandler")
-local LoginHandler = class("LoginHandler")
+local logger = LoggerFactory:getLogger("PlayerHandler")
+local PlayerHandler = class("PlayerHandler")
 
 local CGPlayerMessage = requireAndNew("client.message.CGPlayerMessage")
 
-function LoginHandler:GC_LOGIN_RESULT(resultCode)
+function PlayerHandler:GC_PLAYER_LOGIN_RESULT(resultCode)
 	-- body
 	-- business code
 	logger:debug("Login resultCode: " .. resultCode)
@@ -16,14 +16,14 @@ function LoginHandler:GC_LOGIN_RESULT(resultCode)
 	
 end
 
-function LoginHandler:GC_CHARACTER_TEMPLATE(templates)
+function PlayerHandler:GC_CHARACTER_TEMPLATE(templates)
 	logger:debug("Templates size: " .. #templates)
 	-- 设置数据
 	DataManager:getModuleDataByName("CreateRoleData"):setData(templates)
 	CGPlayerMessage:CG_GET_CHAR_LIST()
 end
 
-function LoginHandler:GC_CHAR_LIST(chars)
+function PlayerHandler:GC_CHAR_LIST(chars)
 	logger:debug("Chars size: " .. #chars)
 	if #chars <= 0 then
 		-- 进入创建角色模块
@@ -35,20 +35,27 @@ function LoginHandler:GC_CHAR_LIST(chars)
 	end
 end
 
-function LoginHandler:GC_CREATE_CHAR_RESULT(resultCode)
+function PlayerHandler:GC_CREATE_CHAR_RESULT(resultCode)
 	logger:debug("Create char resultCode: " .. resultCode)
 end
 
-function LoginHandler:GC_ENTER_SCENE()
+function PlayerHandler:GC_ENTER_SCENE()
 	-- body
 	logger:debug("Prepare to enter scene")
 	-- 进入游戏世界;
 	globalEnterModule("GameWorldModule")
 end
 
-function LoginHandler:GC_AUTO_NAME(roleName)
+function PlayerHandler:GC_AUTO_NAME(roleName)
 	EventBus:fireEvent(EventType.GC_AUTO_NAME, {roleName = roleName})
 end
 
+function PlayerHandler:GC_BATTLE_POP(allPops,maxPveRound,maxPvpRound)
+	-- body
+end
 
-return LoginHandler
+function PlayerHandler:GC_DIRECT_TO_AREA_SCENE()
+	-- body
+end
+
+return PlayerHandler
