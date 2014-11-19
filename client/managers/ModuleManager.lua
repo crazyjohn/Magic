@@ -7,7 +7,6 @@ local logger = LoggerFactory:getLogger("ModuleManager")
 local ModuleManager = class("ModuleManager")
 -- 所有已经注册的模块
 local modules = {}
-local MODULE_PACKAGE = "client.module."
 
 function ModuleManager:ctor( ... )
 	self:__initModules()
@@ -54,7 +53,7 @@ end
 -- 注册模块
 -- @param moduleName; 模块名称;
 function ModuleManager:registModule(moduleName)
-	local module = requireAndNew(MODULE_PACKAGE .. moduleName)
+	local module = requireAndNew(CLIENT_MODULE_PATH .. moduleName)
 	if module == nil then
 		logger:error("Can not find this module class: %s", moduleName)
 		return

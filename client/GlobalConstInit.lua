@@ -12,12 +12,12 @@ CLIENT_MESSAGE_REGISTRY = "client.message.registry."
 CLIENT_HANDLER_PATH = "client.handler."
 -- 网络包路径
 CLIENT_NET_PATH = "client.net."
--- 数据包路径
-CLIENT_DATA_PATH = "client.data."
--- 模块包路径
-CLIENT_MODULE_PATH = "client.module."
--- 视图包路径
-CLIENT_LAYER_PATH = "client.layer."
+-- 模型包路径(Model)
+CLIENT_DATA_PATH = "client.mvc.model."
+-- 模块包路径(Controller)
+CLIENT_MODULE_PATH = "client.mvc.controller."
+-- 视图包路径(View)
+CLIENT_LAYER_PATH = "client.mvc.view."
 -- 管理器包路径
 CLIENT_MANAGERS_PATH = "client.managers."
 -- 日志包路径
