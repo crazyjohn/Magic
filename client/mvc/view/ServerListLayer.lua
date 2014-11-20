@@ -8,8 +8,8 @@ local logger = LoggerFactory:getLogger("ServerListLayer")
 -- create class;
 local ServerListLayer = class("ServerListLayer", function()
     -- TODO: parse ui file
-    local self = Layout:create()
-    --local self = loadUI("ServerListLayer.json")
+    --local self = Layout:create()
+    local self = loadUI("ServerListUI.json")
     local t = tolua.getpeer(self)
     if not t then
         t= {}
@@ -32,20 +32,15 @@ end
 -- declare the field you want to use;
 function ServerListLayer:__onDeclareVars( ... )
     -- TODO: do declare things
-    -- eg: self.__account = tolua.cast(UIHelper:seekWidgetByName(self, "account"), "TextField")
-   
+    self.__bgImg = tolua.cast(UIHelper:seekWidgetByName(self, "bgImg"), "ImageView")
+    self.__backBtn = tolua.cast(UIHelper:seekWidgetByName(self, "backBtn"), "Button")
 end
 
 -- init;
 function ServerListLayer:__onInit( ... )
     -- TODO: do init things(addEventListener...)
-    local bgImg = ImageView:create()
-    bgImg:loadTexture("loginBox.jpg", UI_TEX_TYPE_PLIST)
-    self:addChild(bgImg)
-    bgImg:setTouchEnabled(true)
-    bgImg:addTouchEventListener(function(touch, event)
+    self.__backBtn:addTouchEventListener(function(touch, event)
         if event == TOUCH_EVENT_ENDED then
-            logger:debug("Close server list")
             PopUpManager:removePopUp(self)
         end
     end)
