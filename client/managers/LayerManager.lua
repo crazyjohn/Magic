@@ -19,10 +19,8 @@ function LayerManager:initLayerManager(root)
 	-- 天杀的这里要使用这个接口才可以;
 	touchGroupLayer:addWidget(rootUILayer)
 	-- 2. popUpManager层
-	local popUpTouchLayer = TouchGroup:create()
 	local popUpLayer = Layout:create()
-	popUpTouchLayer:addWidget(popUpLayer)
-	root:addChild(popUpTouchLayer)
+	touchGroupLayer:addWidget(popUpLayer)
 	PopUpManager:setRoot(popUpLayer)
 end
 
