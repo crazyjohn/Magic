@@ -69,10 +69,9 @@ end
 function PopUpManager:addPopUp(popUp, isModal, isCenter, noMask, animationType)
 	-- is center?
 	if isCenter then
-		--popUp:setAnchorPoint(ccp(0.5, 0.5))
-		--logger:debug("PopUp x: %d, y: %d, width:%d, height:%d", popUp:getAnchorPoint().x, popUp:getAnchorPoint().y, popUp:getContentSize().width, popUp:getContentSize().height)
 		popUp:setPosition(ccp((display.width - popUp:getContentSize().width)/2, (display.height - popUp:getContentSize().height)/2))
 	end
+	-- add to ui layer
 	local touchLayer, maskContent = self:__createMask()
 	self.__root:addChild(touchLayer)
 	touchLayer:addChild(popUp)
