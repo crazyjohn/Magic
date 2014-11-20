@@ -36,7 +36,7 @@ function PopUpManager:removePopUp(popUp)
 end
 
 function PopUpManager:centerPopUp(popUp)
-	-- body
+	self:addPopUp(popUp, true, true)
 end
 
 function PopUpManager:isPopUp(popUp)
