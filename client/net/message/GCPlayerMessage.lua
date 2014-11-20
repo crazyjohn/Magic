@@ -32,16 +32,16 @@
 			local charList = {}
 			size = data:readShort()
 			for i=1, size do
-								charList[i] = requireNewProtoData("LoginCharData")
+				charList[i] = requireNewProtoData("LoginCharData")
 				local charList_obj = charList[i]
-																					charList[i].humanGuid = data:readLong() --角色的guid
-																					charList_obj.name = data:readStringUShort()
-																					charList_obj.occupation = data:readInt()
-																					charList_obj.level = data:readInt()
-																					charList[i].energy = data:readLong() --当前精力值
-																					charList_obj.homeLevel = data:readInt()
-																					charList[i].coins = data:readLong() --角色当前金币数量
-															end
+				charList[i].humanGuid = data:readLong() --角色的guid
+				charList_obj.name = data:readStringUShort()
+				charList_obj.occupation = data:readInt()
+				charList_obj.level = data:readInt()
+				charList[i].energy = data:readLong() --当前精力值
+				charList_obj.homeLevel = data:readInt()
+				charList[i].coins = data:readLong() --角色当前金币数量
+			end
 			GlobalHandlers:getHandler("PlayerHandler"):GC_CHAR_LIST(charList)
 		end
  
@@ -71,22 +71,22 @@
 			local characterTemplates = {}
 			size = data:readShort()
 			for i=1, size do
-								characterTemplates[i] = requireNewProtoData("CharacterOccupationTemplateData")
+				characterTemplates[i] = requireNewProtoData("CharacterOccupationTemplateData")
 				local characterTemplates_obj = characterTemplates[i]
-																					characterTemplates_obj.occupationType = data:readInt()
-																					characterTemplates_obj.nameIcon = data:readInt()
-																					characterTemplates_obj.feature = data:readStringUShort()
-																					characterTemplates_obj.classes = data:readStringUShort()
-																					characterTemplates_obj.giftIcon1 = data:readInt()
-																					characterTemplates_obj.giftName1 = data:readStringUShort()
-																					characterTemplates_obj.giftDesc1 = data:readStringUShort()
-																					characterTemplates_obj.giftIcon2 = data:readInt()
-																					characterTemplates_obj.giftName2 = data:readStringUShort()
-																					characterTemplates_obj.giftDesc2 = data:readStringUShort()
-																					characterTemplates_obj.giftIcon3 = data:readInt()
-																					characterTemplates_obj.giftName3 = data:readStringUShort()
-																					characterTemplates_obj.giftDesc3 = data:readStringUShort()
-															end
+				characterTemplates_obj.occupationType = data:readInt()
+				characterTemplates_obj.nameIcon = data:readInt()
+				characterTemplates_obj.feature = data:readStringUShort()
+				characterTemplates_obj.classes = data:readStringUShort()
+				characterTemplates_obj.giftIcon1 = data:readInt()
+				characterTemplates_obj.giftName1 = data:readStringUShort()
+				characterTemplates_obj.giftDesc1 = data:readStringUShort()
+				characterTemplates_obj.giftIcon2 = data:readInt()
+				characterTemplates_obj.giftName2 = data:readStringUShort()
+				characterTemplates_obj.giftDesc2 = data:readStringUShort()
+				characterTemplates_obj.giftIcon3 = data:readInt()
+				characterTemplates_obj.giftName3 = data:readStringUShort()
+				characterTemplates_obj.giftDesc3 = data:readStringUShort()
+			end
 			GlobalHandlers:getHandler("PlayerHandler"):GC_CHARACTER_TEMPLATE(characterTemplates)
 		end
  
@@ -111,17 +111,17 @@
 			local allPops = {}
 			size = data:readShort()
 			for i=1, size do
-								allPops[i] = requireNewProtoData("BattlePopInfoData")
+				allPops[i] = requireNewProtoData("BattlePopInfoData")
 				local allPops_obj = allPops[i]
-																					allPops[i].roleId = data:readLong() --角色ID
-																					local words_allPops_obj
+				allPops[i].roleId = data:readLong() --角色ID
+				local words_allPops_obj
 local allPops_obj_words = {}
 local allPops_obj_wordsSize = data:readShort()
 allPops_obj.words = allPops_obj_words
 for words_allPops_obj=1, allPops_obj_wordsSize do
-		allPops_obj.words[words_allPops_obj] = data:readStringUShort()
-	end
-															end
+	allPops_obj.words[words_allPops_obj] = data:readStringUShort()
+end
+			end
 			local maxPveRound = data:readInt()	
 			local maxPvpRound = data:readInt()	
 			GlobalHandlers:getHandler("PlayerHandler"):GC_BATTLE_POP(allPops,maxPveRound,maxPvpRound)
