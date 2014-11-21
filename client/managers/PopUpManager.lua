@@ -90,7 +90,7 @@ function PopUpManager:addPopUp(popUp, isModal, isCenter, noMask, animationType)
 	if not noMask then
 		-- fadeTo
 		maskContent:setOpacity(0)
-		local fadeTo = CCFadeTo:create(0.5, 150)
+		local fadeTo = CCFadeTo:create(0.8, 150)
 		maskContent:runAction(fadeTo)
 	end
 	-- animationType
