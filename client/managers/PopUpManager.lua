@@ -65,7 +65,8 @@ end
 @param isModal 是否模态展示;
 @param isCenter 是否居中;
 @param noMask 是否有蒙板;
-@param animationType 动画类型;
+@param animationType{ANIMATION_UP_AND_DOWN:上下运动} 动画类型;
+
 
 ]]
 function PopUpManager:addPopUp(popUp, isModal, isCenter, noMask, animationType)
@@ -92,8 +93,12 @@ function PopUpManager:addPopUp(popUp, isModal, isCenter, noMask, animationType)
 		local fadeTo = CCFadeTo:create(0.5, 150)
 		maskContent:runAction(fadeTo)
 	end
-	-- TODO: crazyjohn animationType
-	
+	-- animationType
+	if not animationType then
+		--todo
+	elseif animationType == ANIMATION_UP_AND_DOWN then
+		--todo
+	end
 end
 
 --[[
