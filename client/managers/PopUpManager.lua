@@ -36,6 +36,7 @@ end
 function PopUpManager:__createMask()
 	-- body
 	local touchLayer = Layout:create()
+	touchLayer:setTouchEnabled(true)
 	touchLayer:setSize(CCSize(display.width, display.height))
 	local maskContent = CCLayerColor:create(ccc4(0, 0, 0, 150))
 	touchLayer:addNode(maskContent)
@@ -43,6 +44,7 @@ function PopUpManager:__createMask()
 end
 
 -- pop post fix
+
 local POP_POSTFIX = "pop"
 function PopUpManager:__addPopChild(child)
 	self.__children[(#self.__children + 1) .. POP_POSTFIX] = child
@@ -78,8 +80,9 @@ function PopUpManager:addPopUp(popUp, isModal, isCenter, noMask, animationType)
 	-- add pop child
 	self:__addPopChild(popUp)
 	-- is modal?
-	if isModal then
+	if not isModal then
 		logger:debug("It's modal state")
+		-- are you kidding?
 		touchLayer:setTouchEnabled(false)
 	end
 	-- no mask?
