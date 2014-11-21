@@ -16,15 +16,27 @@ function GameTCPService:ctor( ... )
 	-- init SocketTCP
 	--self.__socket = requireAndNew("framework.cc.net.SocketTCP")
 	self:addEventListener(self.EVENT_CONNECTED, handler(self,self.onConnected))
-	self:addEventListener(self.EVENT_DATA, handler(self,self.onReceivedData))
+	self:addEventListener(self.EVENT_DATA, handler(self,self.onDataReceived))
+	-- closeEvent
+	self:addEventListener(self.EVENT_CLOSE, handler(self,self.onClosed))
+	-- connectFailed
+	self:addEventListener(self.EVENT_CONNECT_FAILURE, handler(self,self.onConnectFailed))
 end
 
 -- 建立连接以后回调;
 function GameTCPService:onConnected(event)
-	logger:debug("Socket status: %s", event.name)
+	logger:info("Socket status: %s", event.name)
 	local userName = "john"
 	local password = "john"
 	CGPlayerMessage:CG_PLAYER_LOGIN(userName, password)
+end
+
+function GameTCPService:onClosed(event)
+	logger:info("Socket status: %s", event.name)
+end
+
+function GameTCPService:onConnectFailed(event)
+	logger:info("Socket status: %s", event.name)
 end
 
 -- 发送消息包;
@@ -45,7 +57,7 @@ end
 
 -- 接受到服务器数据;
 -- @param event 回调网络事件;
-function GameTCPService:onReceivedData(event)
+function GameTCPService:onDataReceived(event)
 	-- 这里要处理粘包的情况，写一个Decoder
 	-- logger:debug("Socket status: %s", event.name)
 	gameDecoder:decode(event.data)
