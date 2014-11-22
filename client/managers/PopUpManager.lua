@@ -1,7 +1,7 @@
 -- PopUpManager
 -- @author crazyjohn
 -- @date 2014-11-19 16:35:15
---
+-- @FIXME: crazyjohn 有bug 在bg的setTouchEnabled(false)时候，点击两次弹出两个板子，关闭的时候只可以关闭一个，可能是移除接口的问题;
 
 -- create logger
 local logger = LoggerFactory:getLogger("PopUpManager")
