@@ -10,7 +10,8 @@
   "designHeight": 768,
   "designWidth": 1024,
   "textures": [
-    "loginAssets.plist"
+    "loginAssets.plist",
+    "commonAssets.plist"
   ],
   "texturesPng": [],
   "version": "1.6.0.0",
@@ -147,6 +148,79 @@
               "textColorB": 255,
               "textColorG": 255,
               "textColorR": 255
+            }
+          },
+          {
+            "classname": "Button",
+            "name": null,
+            "children": [],
+            "options": {
+              "__type": "ButtonSurrogate:#EditorCommon.JsonModel.Component.GUI",
+              "classname": "Button",
+              "name": "seletServerBtn",
+              "ZOrder": 0,
+              "actiontag": 34736162,
+              "anchorPointX": 0.5,
+              "anchorPointY": 0.5,
+              "classType": "CocoStudio.EngineAdapterWrap.CSButton",
+              "colorB": 255,
+              "colorG": 255,
+              "colorR": 255,
+              "customProperty": "",
+              "flipX": false,
+              "flipY": false,
+              "height": 56,
+              "ignoreSize": true,
+              "layoutParameter": null,
+              "opacity": 255,
+              "positionPercentX": 0.4580078,
+              "positionPercentY": 0.173177078,
+              "positionType": 0,
+              "rotation": 0,
+              "scaleX": 1,
+              "scaleY": 1,
+              "sizePercentX": 0.100585938,
+              "sizePercentY": 0.0520833321,
+              "sizeType": 0,
+              "tag": 28,
+              "touchAble": true,
+              "useMergedTexture": false,
+              "visible": true,
+              "width": 144,
+              "x": 469,
+              "y": 133,
+              "capInsetsHeight": 1,
+              "capInsetsWidth": 1,
+              "capInsetsX": 0,
+              "capInsetsY": 0,
+              "disabled": null,
+              "disabledData": {
+                "path": null,
+                "plistFile": null,
+                "resourceType": 0
+              },
+              "fontName": "微软雅黑",
+              "fontSize": 22,
+              "fontType": 0,
+              "normal": null,
+              "normalData": {
+                "path": "btn_0004.png",
+                "plistFile": "commonAssets.plist",
+                "resourceType": 1
+              },
+              "pressed": null,
+              "pressedData": {
+                "path": null,
+                "plistFile": null,
+                "resourceType": 0
+              },
+              "scale9Enable": false,
+              "scale9Height": 56,
+              "scale9Width": 144,
+              "text": "选择服务器",
+              "textColorB": 19,
+              "textColorG": 186,
+              "textColorR": 214
             }
           }
         ],

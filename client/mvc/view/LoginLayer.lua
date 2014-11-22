@@ -66,6 +66,7 @@ function LoginLayer:__onDeclareVars( ... )
 	self.__bgImg = tolua.cast(UIHelper:seekWidgetByName(self, "bgImg"), "ImageView")
 	self.__quickLoginBtn = tolua.cast(UIHelper:seekWidgetByName(self, "enterBtn"), "Button")
 	self.__centerLayer = tolua.cast(UIHelper:seekWidgetByName(self, "enterBtn"), "Layout")
+	self.__selectServerBtn = tolua.cast(UIHelper:seekWidgetByName(self, "seletServerBtn"), "Button")
 	-- end
 end
 -- template method;
@@ -79,13 +80,8 @@ function LoginLayer:__onInit( ... )
 		end
 		
 	end)
-	-- serverListBtn test
-	local selectServerBtn = Button:create()
-	selectServerBtn:setTitleFontSize(24)
-	selectServerBtn:setPosition(ccp(470, 120))
-	self.__quickLoginBtn:getParent():addChild(selectServerBtn)
-	selectServerBtn:loadTextureNormal("enterBtn.png", UI_TEX_TYPE_PLIST)
-	selectServerBtn:addTouchEventListener(function(touch, event)
+	-- serverListBtn
+	self.__selectServerBtn:addTouchEventListener(function(touch, event)
 		if event == TOUCH_EVENT_ENDED then
 			local serverListLayer = requireNewLayer("ServerListLayer")
 			PopUpManager:addPopUp(serverListLayer, true, true)
