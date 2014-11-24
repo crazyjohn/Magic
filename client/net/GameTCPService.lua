@@ -34,13 +34,13 @@ end
 function GameTCPService:onClosed(event)
 	logger:info("Socket status: %s", event.name)
 	local alertLayer = requireNewLayer("AlertLayer")
-	PopUpManager:addPopUp(alertLayer, true, true)
+	alertLayer:showMe("失去服务器连接!")
 end
 
 function GameTCPService:onConnectFailed(event)
 	logger:info("Socket status: %s", event.name)
-	local alertLayer = requireNewLayer("AlertLayer", "连接服务器失败!")
-	PopUpManager:addPopUp(alertLayer, true, true)
+	local alertLayer = requireNewLayer("AlertLayer")
+	alertLayer:showMe("连接服务器失败!")
 end
 
 -- 发送消息包;

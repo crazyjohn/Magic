@@ -20,13 +20,13 @@ local AlertLayer = class("AlertLayer", function()
 end)
 
 -- ctor;
-function AlertLayer:ctor(message)
+function AlertLayer:ctor(...)
     -- 1. declareVar
-    self:__onDeclareVars(message)
+    self:__onDeclareVars(...)
     -- 2. registEvents
     self:registerScriptHandler(handler(self, self.__eventBus))
     -- 3. init
-    self:__onInit(message)
+    self:__onInit(...)
 end
 
 -- declare the field you want to use;
@@ -38,15 +38,26 @@ function AlertLayer:__onDeclareVars( ... )
 end
 
 -- init;
-function AlertLayer:__onInit(message)
+function AlertLayer:__onInit(...)
     -- TODO: do init things(addEventListener...)
     self.__bgImg:addTouchEventListener(function(touch, eventType)
         if eventType == TOUCH_EVENT_ENDED then
             PopUpManager:removePopUp(self)
         end
     end)
+    
+end
+
+--[[
+    
+展示自己;
+@param message 消息内容;
+
+]]
+function AlertLayer:showMe(message)
     -- content
     self.__contentLbl:setText(message)
+    PopUpManager:addPopUp(self, true, true)
 end
 
 -- eventBus;
