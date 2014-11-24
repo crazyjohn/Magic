@@ -72,6 +72,7 @@ end
 function PopUpManager:addPopUp(popUp, isModal, isCenter, noMask, animationType)
 	-- is center?
 	if isCenter then
+		logger:debug("Popup width: %d, height: %d", popUp:getContentSize().width, popUp:getContentSize().height)
 		popUp:setPosition(ccp((display.width - popUp:getContentSize().width)/2, (display.height - popUp:getContentSize().height)/2))
 	end
 	-- add to ui layer
