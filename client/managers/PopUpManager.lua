@@ -1,7 +1,6 @@
 -- PopUpManager
 -- @author crazyjohn
 -- @date 2014-11-19 16:35:15
--- @FIXME: crazyjohn 有bug 在bg的setTouchEnabled(false)时候，点击两次弹出两个板子，关闭的时候只可以关闭一个，可能是移除接口的问题;
 
 -- create logger
 local logger = LoggerFactory:getLogger("PopUpManager")
@@ -44,10 +43,12 @@ function PopUpManager:__createMask()
 end
 
 -- pop post fix
-
 local POP_POSTFIX = "pop"
+-- counter
+local popCounter = 0
 function PopUpManager:__addPopChild(child)
-	self.__children[(#self.__children + 1) .. POP_POSTFIX] = child
+	popCounter = popCounter + 1
+	self.__children[(popCounter) .. POP_POSTFIX] = child
 end
 
 function PopUpManager:__removePopChild(child)
@@ -110,6 +111,7 @@ end
 function PopUpManager:removePopUp(popUp)
 	-- is popUp
 	if not self:isPopUp(popUp) then
+		logger:debug("This popUp: %s is not a real popUp", tostring(popUp))
 		return
 	end
 	self:__removePopChild(popUp)
