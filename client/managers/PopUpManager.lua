@@ -117,7 +117,11 @@ function PopUpManager:removePopUp(popUp)
 	self:__removePopChild(popUp)
 	local parent = popUp:getParent()
 	popUp:removeFromParentAndCleanup(true)
-	self.__root:removeChild(parent, true)
+	local fadaTo = CCFadeTo:create(0.3, 0)
+	parent:runAction(transition.sequence({fadaTo, CCCallFunc:create(function( ... )
+		self.__root:removeChild(parent, true)
+	end)}))
+	
 end
 
 --[[
