@@ -40,11 +40,11 @@ end
 -- init;
 function AlertLayer:__onInit(...)
     -- TODO: do init things(addEventListener...)
-    self.__bgImg:addTouchEventListener(function(touch, eventType)
-        if eventType == TOUCH_EVENT_ENDED then
-            PopUpManager:removePopUp(self)
-        end
-    end)
+    -- self.__bgImg:addTouchEventListener(function(touch, eventType)
+    --     if eventType == TOUCH_EVENT_ENDED then
+    --         PopUpManager:removePopUp(self)
+    --     end
+    -- end)
     
 end
 
@@ -54,10 +54,41 @@ end
 @param message 消息内容;
 
 ]]
-function AlertLayer:showMe(message)
+function AlertLayer:showMe(message, btns, callbacks)
     -- content
     self.__contentLbl:setText(message)
     PopUpManager:addPopUp(self, true, true)
+    -- btns
+    if btns ~= nil then
+        for i,label in ipairs(btns) do
+            local btn = Button:create()
+            btn:setTitleText(label)
+            btn:setTitleFontSize(24)
+            btn:loadTextureNormal("btn_0003.png", UI_TEX_TYPE_PLIST)
+            btn:setAnchorPoint(ccp(0, 0))
+            self:__setPositionForBtn(btn, i, btns)
+            self.__bgImg:addChild(btn)
+            btn:addTouchEventListener(function(touch, eventType)
+                if eventType == TOUCH_EVENT_ENDED then
+                    callbacks[i]()
+                end
+            end)
+        end
+    end
+end
+
+function AlertLayer:__setPositionForBtn(btn, index, btns)
+    -- 1 - btn : 266, 90
+    -- 2 - btn : 1(157, 90) 2(365, 90)
+    if #btns == 1 then
+        btn:setPosition(ccp(200, 70))
+    elseif #btns == 2 then
+        if index == 1 then
+            btn:setPosition(ccp(100, 70))
+        else
+            btn:setPosition(ccp(310, 70))
+        end
+    end
 end
 
 -- eventBus;
