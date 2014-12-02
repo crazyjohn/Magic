@@ -2,10 +2,11 @@ Magic
 =========
 
 a game client engine
+***
 
 YO YO YO! what's up biatch: if you want to make mobile game use lua easily, you got the right place, follow me, learn to use the Magic engine.
 
-
+***
 version.cn:
 
 ##结构介绍##
