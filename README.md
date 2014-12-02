@@ -8,7 +8,7 @@ YO YO YO! what's up biatch: if you want to make mobile game use lua easily, you 
 
 version.cn:
 
-【结构介绍】
+#结构介绍#
 
 1. client目录中是我封装的引擎的主体。
 
